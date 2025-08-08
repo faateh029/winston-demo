@@ -1,0 +1,4 @@
+{"level":"info","message":"Payment system started","service":"Payment service","timestamp":"2025-08-08T12:36:31.438Z"}
+{"level":"error","message":"Payment failed","service":"Payment service","timestamp":"2025-08-08T12:36:31.451Z","transactionId":12345}
+{"level":"info","message":"Payment system started","service":"Payment service","timestamp":"2025-08-08T12:41:34.015Z"}
+{"level":"error","message":"Payment failed","service":"Payment service","timestamp":"2025-08-08T12:41:34.029Z","transactionId":12345}

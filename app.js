@@ -1,23 +1,25 @@
 import winston from 'winston';
+import './loggers.js';
 
-const {format} = winston;
-const {combine , timestamp , json , prettyPrint , errors} = format;
+const OrderLogger = winston.loggers.get('OrderLogger');
+const PaymentLogger = winston.loggers.get('PaymentLogger');
 
-const logger = winston.createLogger({
-    level:'info', //global minimum level for all transports , acts as a master filter for all logs . this means only levels of the default and above will be logged . no logs with level bellow the default level will be logged
-    format:combine(
-        errors({stack:true}), //stack shows the complete execution path towards the error
-        timestamp(),
-        json(),
-        prettyPrint()
-           // printf((info)=> `${info.timestamp}  ${info.level} : ${info.message}`) 
-    ),
-    transports:[
-        new winston.transports.Console(),
-        //new winston.transports.File({filename:'app.log' , level:'error'})
-    ]
-})
-const requestLog = {method:"GET",isAuthenticated:"Yes"}; //adding custom loggin in the log messages
-const childLogger = logger.child(requestLog);
-childLogger.info("An info level log" , new Error);
-childLogger.error("errors are logged here" , new Error);
+// Test OrderLogger
+OrderLogger.info('This should appear in console');
+OrderLogger.error('This should appear in console and Orders.log', new Error('Test error'));
+
+// Test PaymentLogger
+PaymentLogger.info('Payment system started');
+PaymentLogger.error('Payment failed', { transactionId: 12345 });
+
+
+
+
+// const {format} = winston;
+// const {combine , timestamp , json , prettyPrint , errors} = format;
+
+// const logger = winston.createLogger()
+// const requestLog = {method:"GET",isAuthenticated:"Yes"}; //adding custom loggin in the log messages
+// const childLogger = logger.child(requestLog);
+// childLogger.info("An info level log" , new Error);
+// childLogger.error("errors are logged here" , new Error);
