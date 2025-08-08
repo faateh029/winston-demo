@@ -1,11 +1,17 @@
 import winston from 'winston';
 
+const {format} = winston;
+const {combine , timestamp,printf} = format;
+
 const logger = winston.createLogger({
     level:'info', //global minimum level for all transports , acts as a master filter for all logs . this means only levels of the default and above will be logged . no logs with level bellow the default level will be logged
-    format:winston.format.json(),
+    format:combine(
+        timestamp(),
+            printf((info)=> `${info.timestamp} , ${info.message}`) 
+    ),
     transports:[
         new winston.transports.Console(),
-        new winston.transports.File({filename:'app.log' , level:'error'})
+        //new winston.transports.File({filename:'app.log' , level:'error'})
     ]
 })
 logger.info("An info level log");
