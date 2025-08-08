@@ -3,10 +3,10 @@ const {format} = winston;
 const {timestamp , combine ,printf,prettyPrint, json, errors} = format;
 
 
-// Initialize the default logger (important for containers)
-winston.configure({
-    transports: [new winston.transports.Console()]
-});
+// // Initialize the default logger (important for containers)
+// winston.configure({
+//     transports: [new winston.transports.Console()]
+// });
 
 // Create OrderLogger
 winston.loggers.add('OrderLogger', {

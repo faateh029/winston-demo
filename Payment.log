@@ -2,3 +2,10 @@
 {"level":"error","message":"Payment failed","service":"Payment service","timestamp":"2025-08-08T12:36:31.451Z","transactionId":12345}
 {"level":"info","message":"Payment system started","service":"Payment service","timestamp":"2025-08-08T12:41:34.015Z"}
 {"level":"error","message":"Payment failed","service":"Payment service","timestamp":"2025-08-08T12:41:34.029Z","transactionId":12345}
+{"level":"info","message":"Payment system started","service":"Payment service","timestamp":"2025-08-08T12:43:04.081Z"}
+{"level":"error","message":"Payment failed","service":"Payment service","timestamp":"2025-08-08T12:43:04.084Z","transactionId":12345}
+{"level":"info","message":"Payment system started","service":"Payment service","timestamp":"2025-08-08T12:43:26.758Z"}
+{"level":"error","message":"Payment failed","service":"Payment service","timestamp":"2025-08-08T12:43:26.767Z","transactionId":12345}
+{"level":"info","message":"Payment system started","service":"Payment service","timestamp":"2025-08-08T12:46:41.226Z"}
+{"level":"error","message":"Payment failed","service":"Payment service","timestamp":"2025-08-08T12:46:41.237Z","transactionId":12345}
+{"durationMs":25989,"level":"info","msg":"Profiling done with the path /payment","timestamp":"2025-08-08T12:59:34.530Z"}
